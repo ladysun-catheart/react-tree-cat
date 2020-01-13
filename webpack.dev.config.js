@@ -9,6 +9,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
   },
+  devtool: 'source-map',
   resolve: {
     alias: {
       ['@imgs']: path.resolve(__dirname,'assets/imgs/'),
@@ -37,7 +38,7 @@ module.exports = {
               presets: ['@babel/react', '@babel/preset-env'],
             },
           },
-          'eslint-loader',
+          //'eslint-loader',
         ],
       },
       {

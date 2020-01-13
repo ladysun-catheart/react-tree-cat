@@ -4,8 +4,15 @@ import TreeCat from './tree-cat'
 
 const Main = () => {
   const nodeList = [
-    { key: 1, title: 'Node 01' },
-    { key: 2, title: 'Node 02' },
+    {
+      id: '1',
+      title: 'Node',
+      children: [
+        { id: '1-1', title: 'Node' },
+        { id: '1-2', title: 'Node', children: [{ id: '1-2-1', title: 'Node' }] },
+      ],
+    },
+    { id: '2', title: 'Node' },
   ]
   return (
     <TreeCat
