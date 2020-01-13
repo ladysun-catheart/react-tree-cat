@@ -18,6 +18,7 @@
         "object-curly-newline": ["error", { "multiline": true, "minProperties": 6 }],
         "react/jsx-props-no-spreading": "off",
         "import/no-unresolved": [0],
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "react/forbid-prop-types": [0]
     }
 }
