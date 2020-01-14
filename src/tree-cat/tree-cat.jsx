@@ -14,6 +14,7 @@ import {
 const TreeCat = ({ nodeList }) => {
   const [nodeListAux, setNodeListAux] = useState(addInfoNodeList(nodeList))
   const onDelete = (id) => setNodeListAux(deleteNode(id, nodeListAux))
+  const onEdit = (id, value) => setNodeListAux(editNode(id, value, nodeListAux))
   const onClickExpand = (id, expanded) => {
     const listAux = setExpandNode(id, expanded, nodeListAux)
     setNodeListAux(setExpandNode(id, expanded, nodeListAux))
@@ -21,7 +22,6 @@ const TreeCat = ({ nodeList }) => {
   const actionList = [
     (id) => <ActionDelete key="delete" onDelete={() => onDelete(id)} />,
   ]
-  const onEdit = (id, value) => setNodeListAux(editNode(id, value, nodeListAux))
   return (
     <TreeCatList
       nodeList={nodeListAux}
