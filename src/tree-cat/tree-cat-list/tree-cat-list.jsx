@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import TreeCatNode from '../tree-cat-node'
 
-const TreeCatList = ({ nodeList, onClickExpand, actionList }) => (
+const TreeCatList = ({ nodeList, onClickExpand, actionList, onEdit }) => (
   <ul>
     {nodeList.map((node) => (
       <li key={node.id}>
@@ -10,6 +10,7 @@ const TreeCatList = ({ nodeList, onClickExpand, actionList }) => (
           {...node}
           onClickExpand={onClickExpand}
           actionList={actionList}
+          onEdit={onEdit}
         />
       </li>
     ))}
@@ -20,6 +21,7 @@ TreeCatList.propTypes = {
   nodeList: PropTypes.array.isRequired,
   onClickExpand: PropTypes.func.isRequired,
   actionList: PropTypes.array.isRequired,
+  onEdit: PropTypes.func.isRequired,
 }
 
 export default TreeCatList

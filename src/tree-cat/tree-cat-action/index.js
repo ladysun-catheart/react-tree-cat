@@ -3,5 +3,5 @@ import ActionDelete from './action-delete'
 
 export default TreeCatAction
 export {
-  ActionDelete
+  ActionDelete,
 }
