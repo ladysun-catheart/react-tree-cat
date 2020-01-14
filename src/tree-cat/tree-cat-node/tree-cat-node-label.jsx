@@ -11,8 +11,8 @@ const TreeCatNodeLabel = ({ editable, value, onChangeValue, onSaveEdit, onClickL
     />
   ) : (
       <span
+        style={{ fontFamily: 'Retro Computer', cursor: "text" }}
         onClick={() => onClickLabel(!editable)}
-        style={{ cursor: "text" }}
       >{value}
       </span>
     )
