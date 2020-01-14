@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import TreeCatList from '../tree-cat-list'
-import TreeCatNodeActions from './tree-cat-node-actions'
+import TreeCatNodeBullet from './tree-cat-node-bullet'
 import TreeCatNodeLabel from './tree-cat-node-label'
+import TreeCatNodeActions from './tree-cat-node-actions'
 
 const TreeCatNode = ({ id, title, children, expanded, onClickExpand, actionList, onEdit }) => {
   const [editable, setEditable] = useState(false)
@@ -14,13 +15,11 @@ const TreeCatNode = ({ id, title, children, expanded, onClickExpand, actionList,
   }
   return (
     <div>
-      {children.length > 0 ? (
-        <button
-          type="button"
-          onClick={() => onClickExpand(id, !expanded)}
-        >{expandedIcon(expanded)}
-        </button>
-      ) : null}
+      <TreeCatNodeBullet
+        hasChildren={children.length > 0}
+        isExpanded={expanded}
+        onClickExpand={(expand) => onClickExpand(id, expand)}
+      />
       <TreeCatNodeLabel
         editable={editable}
         value={value}
@@ -39,7 +38,8 @@ const TreeCatNode = ({ id, title, children, expanded, onClickExpand, actionList,
           onClickExpand={onClickExpand}
           actionList={actionList}
           onEdit={onEdit}
-        />) : null}
+        />
+      ) : null}
     </div>
   )
 }
