@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import TreeCatList from '../tree-cat-list'
 
-const TreeCatNode = ({ id, title, children, expanded, onClickExpand }) => {
+const TreeCatNode = ({ id, title, children, expanded, onClickExpand, actionList }) => {
   const hasChildren = (list) => list && list.length > 0
   const expandedIcon = (isExpanded) => isExpanded ? '-' : '+'
   return (
@@ -17,10 +17,12 @@ const TreeCatNode = ({ id, title, children, expanded, onClickExpand }) => {
         ) : null}
       {id}
       {title}
+      {actionList.map(action => action(id))}
       {hasChildren(children) && expanded ? (
         <TreeCatList
           nodeList={children}
           onClickExpand={onClickExpand}
+          actionList={actionList}
         />) : null
       }
     </div>
@@ -32,6 +34,7 @@ TreeCatNode.propTypes = {
   title: PropTypes.string.isRequired,
   expanded: PropTypes.bool.isRequired,
   onClickExpand: PropTypes.func.isRequired,
+  actionList: PropTypes.array.isRequired,
 }
 
 export default TreeCatNode
