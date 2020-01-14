@@ -4,8 +4,13 @@ import TreeCatList from '../tree-cat-list'
 
 const TreeCatNode = ({ id, title, children, expanded, onClickExpand, actionList, onEdit }) => {
   const [editable, setEditable] = useState(false)
+  const [value, setValue] = useState(title)
   const hasChildren = (list) => list && list.length > 0
   const expandedIcon = (isExpanded) => isExpanded ? '-' : '+'
+  const onSaveEdit = (value, editable) => {
+    setEditable(editable)
+    onEdit(id, value)
+  }
   return (
     <div>
       {hasChildren(children) ?
@@ -17,7 +22,7 @@ const TreeCatNode = ({ id, title, children, expanded, onClickExpand, actionList,
         </button>
         ) : null}
       {id}
-      {editable ? <input value="title" onBlur={() => setEditable(!editable)} autoFocus /> : <span onClick={() => setEditable(!editable)} style={{ cursor: "text" }}>title</span> }
+      {editable ? <input value="title" value={value} onChange={(e) => setValue(e.target.value)} onBlur={() => onSaveEdit(value, !editable)} autoFocus /> : <span onClick={() => setEditable(!editable)} style={{ cursor: "text" }}>{title}</span> }
       {editable ? <button onClick={() => setEditable(false)}>❌</button> : actionList.map(action => action(id))}
       {hasChildren(children) && expanded ? (
         <TreeCatList

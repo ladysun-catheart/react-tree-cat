@@ -8,6 +8,7 @@ import {
   addInfoNodeList,
   setExpandNode,
   deleteNode,
+  editNode
 } from './utils'
 
 const TreeCat = ({ nodeList }) => {
@@ -20,11 +21,13 @@ const TreeCat = ({ nodeList }) => {
   const actionList = [
     (id) => <ActionDelete key="delete" onDelete={() => onDelete(id)} />,
   ]
+  const onEdit = (id, value) => setNodeListAux(editNode(id, value, nodeListAux))
   return (
     <TreeCatList
       nodeList={nodeListAux}
       onClickExpand={onClickExpand}
       actionList={actionList}
+      onEdit={onEdit}
     />
   )
 }

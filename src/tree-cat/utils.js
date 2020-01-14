@@ -26,8 +26,17 @@ const addInfoNodeList = (list) => (
   }))
 )
 
+const editNode = (id, value, list) => {
+  const finded = list.find(node => node.id === id)
+  const listAux = finded ?
+    list.map(node => node.id === id ? {...node, title: value} : {...node}) :
+    list.map(node => ({ ...node, children: editNode(id, value, node.children) }))
+  return listAux
+}
+
 export {
   addInfoNodeList,
   setExpandNode,
   deleteNode,
+  editNode,
 }
