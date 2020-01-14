@@ -8,30 +8,31 @@ import TreeCatNodeActions from './tree-cat-node-actions'
 const TreeCatNode = ({ id, title, children, expanded, onClickExpand, actionList, onEdit }) => {
   const [editable, setEditable] = useState(false)
   const [value, setValue] = useState(title)
-  const expandedIcon = (isExpanded) => isExpanded ? '-' : '+'
   const onSaveEdit = (value, editable) => {
     setEditable(editable)
     onEdit(id, value)
   }
   return (
     <div>
-      <TreeCatNodeBullet
-        hasChildren={children.length > 0}
-        isExpanded={expanded}
-        onClickExpand={(expand) => onClickExpand(id, expand)}
-      />
-      <TreeCatNodeLabel
-        editable={editable}
-        value={value}
-        onChangeValue={setValue}
-        onSaveEdit={onSaveEdit}
-        onClickLabel={setEditable}
-      />
-      <TreeCatNodeActions
-        editable={editable}
-        actionList={actionList}
-        onCancel={() => setEditable(false)} id={id}
-      />
+      <div style={{ display: 'flex' }}>
+        <TreeCatNodeBullet
+          hasChildren={children.length > 0}
+          isExpanded={expanded}
+          onClickExpand={(expand) => onClickExpand(id, expand)}
+        />
+        <TreeCatNodeLabel
+          editable={editable}
+          value={value}
+          onChangeValue={setValue}
+          onSaveEdit={onSaveEdit}
+          onClickLabel={setEditable}
+        />
+        <TreeCatNodeActions
+          editable={editable}
+          actionList={actionList}
+          onCancel={() => setEditable(false)} id={id}
+        />
+      </div>
       {children.length > 0 && expanded ? (
         <TreeCatList
           nodeList={children}

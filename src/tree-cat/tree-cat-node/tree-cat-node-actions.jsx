@@ -2,13 +2,16 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 const TreeCatNodeActions = ({ editable, actionList, onCancel, id }) => (
-  editable ? (
-    <button
-      onClick={onCancel}
-    >❌
+  <div style={{display: 'flex', flex: '1', justifyContent: 'flex-end'}}>{
+    editable ? (
+      <button
+        onClick={onCancel}
+        style={{cursor: 'pointer'}}
+      >❌
     </button>
-  ) :
-    actionList.map(action => action(id))
+    ) :
+      actionList.map(action => action(id))
+  }</div>
 )
 
 TreeCatNodeActions.propTypes = {

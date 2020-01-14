@@ -5,6 +5,7 @@ const TreeCatAction = ({ icon, onClick }) => (
   <button
     type="button"
     onClick={onClick}
+    style={{cursor: 'pointer'}}
   >
     {icon}
   </button>
