@@ -5,7 +5,7 @@ const TreeCatAction = ({ icon, onClick }) => (
   <button
     type="button"
     onClick={onClick}
-    style={{cursor: 'pointer'}}
+    style={{fontFamily: 'Retro Computer', fontSize: '0.6rem', cursor: 'pointer', cursor: 'pointer', border: 'none', color: 'white', backgroundColor: 'gray', fontWeight: 'bolder'}}
   >
     {icon}
   </button>

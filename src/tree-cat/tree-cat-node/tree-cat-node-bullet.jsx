@@ -4,17 +4,17 @@ import PropTypes from 'prop-types'
 const TreeCatNodeBullet = ({ hasChildren, isExpanded, onClickExpand }) => (
   hasChildren ? (
     <button
-      style={{ width: '1.5rem', height: '1.5rem', padding: 0, cursor: 'pointer' }}
+      style={{ width: '1.2rem', padding: 0, cursor: 'pointer', border: 'none', marginRight: '0.5rem', color: 'white', backgroundColor: 'black', fontWeight: 'bolder' }}
       type="button"
       onClick={() => onClickExpand(!isExpanded)}
     >{isExpanded ? '-' : '+'}
     </button>
   ) : (
       <button
-        style={{ width: '1.5rem', height: '1.5rem', padding: 0, cursor: 'pointer' }}
+        style={{ width: '1.2rem', padding: 0, border: 'none', marginRight: '0.5rem', backgroundColor: 'black' }}
         type="button"
         disabled
-      >.</button>
+      ></button>
     )
 )
 

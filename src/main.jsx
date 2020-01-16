@@ -6,18 +6,20 @@ const Main = () => {
   const nodeList = [
     {
       id: '1',
-      title: 'Node',
+      title: 'Patata',
       children: [
-        { id: '1-1', title: 'Node' },
-        { id: '1-2', title: 'Node', children: [{ id: '1-2-1', title: 'Node' }] },
+        { id: '1-1', title: 'Fritas' },
+        { id: '1-2', title: 'Asadas', children: [{ id: '1-2-1', title: 'Especiadas' }] },
       ],
     },
-    { id: '2', title: 'Node' },
+    { id: '2', title: 'Pimientos' },
   ]
   return (
-    <TreeCat
-      nodeList={nodeList}
-    />
+    <div style={{width: '30%', padding: '1rem', border: '2px solid black'}}>
+      <TreeCat
+        nodeList={nodeList}
+      />
+    </div>
   )
 }
 
