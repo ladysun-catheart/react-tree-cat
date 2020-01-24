@@ -14,7 +14,7 @@ const TreeCatNode = ({ id, title, children, expanded, onClickExpand, actionList,
   }
   return (
     <div>
-      <div className="treeCatListLi" style={{ display: 'flex' }}>
+      <div className="treeCatListLi">
         <TreeCatNodeBullet
           hasChildren={children.length > 0}
           isExpanded={expanded}

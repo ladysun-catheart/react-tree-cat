@@ -4,7 +4,55 @@
 }
 
 .treeCatListLi {
+  display: flex;
   &:hover {
     background-color: gainsboro;
+  }
+
+  .treeCatListBulletEmpty{ 
+    width: 1.2rem;
+    padding: 0;
+    border: none;
+    margin-right: 0.5rem; 
+    background-color: black; 
+  }
+
+  .treeCatListBulletExpand{ 
+    width: 1.2rem;
+    padding: 0;
+    cursor: pointer; 
+    border: none;
+    margin-right: 0.5rem; 
+    color: white;
+    background-color: black; 
+    font-weight: bolder;
+  }
+
+  .treeCatListLabelEdit{
+    border: none;
+    background: none;
+    font-family: Retro Computer;
+    display: block;
+  }
+
+  .treeCatListLabelText{
+    font-family: Retro Computer;
+    cursor: "text"; 
+  }
+
+  .treeCatListActions {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+
+    .treeCatListActionsBtn { 
+      font-family: 'Retro Computer';
+      font-size: 0.6rem;
+      cursor: pointer;
+      border: none;
+      color: white;
+      background-color: gray;
+      font-weight: bolder;
+    }
   }
 }

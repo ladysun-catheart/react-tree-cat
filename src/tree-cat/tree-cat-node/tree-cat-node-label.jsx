@@ -5,15 +5,14 @@ const TreeCatNodeLabel = ({ editable, value, onChangeValue, onSaveEdit, onClickL
   editable ? (
     <input
       value={value}
-      className="treeCatListLi"
-      style={{border: 'none', fontFamily: 'Retro Computer', display: 'block'}}
+      className="treeCatListLabelEdit"
       onChange={(e) => onChangeValue(e.target.value)}
       onBlur={() => onSaveEdit(value, !editable)}
       autoFocus
     />
   ) : (
       <span
-        style={{ fontFamily: 'Retro Computer', cursor: "text" }}
+        className="treeCatListLabelText"
         onClick={() => onClickLabel(!editable)}
       >{value}
       </span>

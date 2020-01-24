@@ -4,7 +4,7 @@ import TreeCatAction from './tree-cat-action'
 
 const ActionDelete = ({ onDelete }) => (
   <TreeCatAction
-    icon="delete"
+    icon="del"
     onClick={onDelete}
   />
 )

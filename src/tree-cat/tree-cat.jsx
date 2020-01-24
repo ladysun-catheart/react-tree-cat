@@ -10,6 +10,7 @@ import {
   deleteNode,
   editNode
 } from './utils'
+import '@style/main.scss'
 
 const TreeCat = ({ nodeList }) => {
   const [nodeListAux, setNodeListAux] = useState(addInfoNodeList(nodeList))

@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 const TreeCatNodeActions = ({ editable, actionList, onCancel, id }) => (
-  <div style={{ display: 'flex', flex: '1', justifyContent: 'flex-end' }}>{
+  <div className="treeCatListActions">{
     editable ? (
       <button
-        style={{ fontFamily: 'Retro Computer', fontSize: '0.6rem', cursor: 'pointer', cursor: 'pointer', border: 'none', color: 'white', backgroundColor: 'gray', fontWeight: 'bolder' }}
+        className="treeCatListActionsBtn"
         onClick={onCancel}
       >X
     </button>
